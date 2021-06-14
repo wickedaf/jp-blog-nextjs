@@ -21,7 +21,7 @@ const customStyles = {
   
   
   // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-  Modal.setAppElement("#userProfileID");
+  
 
   const userProfile = () => {
     const { userData, postData } = useContext(BlogContext);
@@ -35,6 +35,7 @@ const customStyles = {
       fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`)
         .then((res) => res.json())
         .then((data) => setUserPost(data));
+        Modal.setAppElement("#userProfileID");
     }, [userId]);
   
     const handleDeleteBtn = (postId) => {
