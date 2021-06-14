@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { createContext, useCallback, useEffect, useState } from "react";
-import {NavBar} from "../components/navBar";
+import NavBar from "../components/navBar";
 
 export const BlogContext = createContext();
 

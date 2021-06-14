@@ -16,15 +16,14 @@ const customStyles = {
     },
   };
   
-  if(process.bower){
+
         
-    // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-    Modal.setAppElement(document.getElementById("#userProfile"));
-  }
   
+  
+  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+  Modal.setAppElement("#userProfileID");
+
   const userProfile = () => {
-
-
     const { userData, postData } = useContext(BlogContext);
     const [user, setUser] = userData;
     const [userPost, setUserPost] = useState([]);
@@ -85,7 +84,7 @@ const customStyles = {
     }
 
     return (
-        <div className="container" id="userProfile">
+        <div className="container">
       <div class="card my-3 mx-auto" style={{maxWidth: "740px"}}>
         <div class="row g-0 p-3">
           <div class="col-md-4">
@@ -111,7 +110,7 @@ const customStyles = {
         </div>
       </div>
 
-      <table className="table">
+      <table className="table"  id="userProfileID">
         <thead>
           <tr>
             <th scope="col">#</th>
