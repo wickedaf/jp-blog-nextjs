@@ -16,10 +16,14 @@ const customStyles = {
     },
   };
   
-  // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
-  Modal.setAppElement(document.getElementById("#userProfile"));
+  if(process.bower){
+        
+    // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
+    Modal.setAppElement(document.getElementById("#userProfile"));
+  }
+  
+  const userProfile = () => {
 
-const userProfile = () => {
 
     const { userData, postData } = useContext(BlogContext);
     const [user, setUser] = userData;
