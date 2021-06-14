@@ -1,7 +1,9 @@
 import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { createContext, useCallback, useEffect, useState } from "react";
-import NavBar from "../components/navBar";
+import dynamic from "next/dynamic";
+
+const NavBarDynamic = dynamic(() => import("../components/NavBar"))
 
 export const BlogContext = createContext();
 
@@ -25,12 +27,14 @@ function MyApp({ Component, pageProps }) {
   useEffect(() => {
     fetchUserAPI();
   }, [fetchUserAPI]);
+  
+
 
   return (
     <BlogContext.Provider
       value={{ userData: [user, setUser], postData: [post, setPost] }}
     >
-      <NavBar></NavBar>
+      <NavBarDynamic />
       <Component {...pageProps} />
     </BlogContext.Provider>
   );
